@@ -26,13 +26,3 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
-
-test {
-   useJUnit {
-      includeCategories 'LibraryTest'
-      includeCategories 'Test2'
-   }
-   reports {
-        junitXml.enabled = true
-    }   
-}
