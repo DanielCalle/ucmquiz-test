@@ -46,5 +46,17 @@ public class Calculator {
 		return finalSolution;
 	
 	}
+	
+	public int div() {
+		
+		return operand1 / operand2;
+		
+	}
+	
+	public int mul() {
+		
+		return operand1 * operand2;
+		
+	}
 
 }
