@@ -1,3 +1,5 @@
+package classesTest;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertNull;
@@ -5,6 +7,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import classes.Calculator;
 
 //@RunWith(JUnitParamsRunnner.class)
 public class CalculatorTest {
