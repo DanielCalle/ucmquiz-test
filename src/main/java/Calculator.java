@@ -18,5 +18,9 @@ public class Calculator {
 	public int add() {
 		return this.operand1 + this.operand2;
 	}
+	
+	public Integer badCast() {
+		return null;
+	}
 
 }
