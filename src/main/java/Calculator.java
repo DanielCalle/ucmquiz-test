@@ -22,5 +22,29 @@ public class Calculator {
 	public Integer badCast() {
 		return null;
 	}
+	
+	public int seconGradeEcuationFirstSolution(int a, int b, int c) {
+		
+		int sqrtInside = (int) (Math.pow(b, 2) - 4 * a * c);
+		
+		int sqrtResult = (int) Math.sqrt(sqrtInside);
+		
+		int finalSolution = ( (-b) + sqrtResult ) / (2 * a); 
+		
+		return finalSolution;
+	
+	}
+	
+	public int seconGradeEcuationSecondSolution(int a, int b, int c) {
+		
+		int sqrtInside = (int) (Math.pow(b, 2) - 4 * a * c);
+		
+		int sqrtResult = (int) Math.sqrt(sqrtInside);
+		
+		int finalSolution = ( (-b) - sqrtResult ) / (2 * a); 
+		
+		return finalSolution;
+	
+	}
 
 }

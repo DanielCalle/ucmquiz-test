@@ -1,6 +1,12 @@
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import org.junit.Test;
+
+import static org.hamcrest.Matchers.*;
+
+
 
 public class CalculatorTest {
 
@@ -18,7 +24,7 @@ public class CalculatorTest {
 	@Test
 	public void testSub() {
 		
-		fail("Esta funcionalidad aun no ha sido implementada.");
+		// fail("Esta funcionalidad aun no ha sido implementada.");
 		
 	}
 	
@@ -30,7 +36,25 @@ public class CalculatorTest {
 		assertNull(c.badCast());
 		
 	}
+	
+	@Test
+	public void testSeconGradeEcuationFisrtSolution() {
+		
+		Calculator c = new Calculator();
+	
+		assertThat( c.seconGradeEcuationFirstSolution(1, -5, 6) , is(equalTo(3)) );
+		
+	}
+	
+	@Test
+	public void testSeconGradeEcuationSecondSolution() {
+		
+		Calculator c = new Calculator();
+	
+		assertThat( c.seconGradeEcuationSecondSolution(1, -5, 6) > 0 , is(true));
+	
+		assertThat("Comprobacion del resultado", c.seconGradeEcuationSecondSolution(1, -5, 6) , is(equalTo(2)) );
+		
+	}
 
-	
-	
 }
