@@ -1,2 +1,9 @@
 /.gradle/
 /build/
+<<<<<<< HEAD
+=======
+
+build/
+
+bin/
+>>>>>>> branch 'master' of https://github.com/DanielCalle/ucmquiz-test.git
