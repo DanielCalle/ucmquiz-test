@@ -1,30 +1,25 @@
 package marksTest;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 import Marks.Student;
 import Marks.StudentDAO;
 import Marks.TeacherTasks;
 
-@RunWith(MockitoJUnitRunner.class)
-public class TeacherTasksTest {
+public class TeacherTasksTest2 {
 
-	@Mock
 	private Student student;
-	
 	private ArrayList<Student> students;
 
 	@InjectMocks
@@ -35,6 +30,7 @@ public class TeacherTasksTest {
 	
 	@Before
 	public void preparations() {
+		MockitoAnnotations.initMocks(this);
 		teacherTasks = new TeacherTasks();
 		teacherTasks.setStudentDAO(studentDAO);
 		student = new Student();
@@ -59,21 +55,35 @@ public class TeacherTasksTest {
 		assertEquals("nekomamushi", names.get(0));
 	}
 	
-	@Test // matchers
-	public void testShowMarkGivenStudent() {
-		student = student
-			.setName("nekomamushi")
-			.setSurname("cat viper")
-			.setGender(true)
-			.addMark("Dibujo Tecnico", 0)
-			.addMark("Lengua", 5)
-			.addMark("Matematicas", 8)
-			.addMark("Tecnologia", 7)
-			.addMark("Educacion Fisica", 10)
-			.build();
-		when(studentDAO.read(anyInt())).thenReturn(student);
-		teacherTasks.showMark(2);
-		verify(studentDAO, times(1)).read(anyInt());
+	// Spy
+	@Test (expected = IndexOutOfBoundsException.class)
+	public void testSpyException() {
+		ArrayList<Student> twoStudents = Mockito.spy(students);
+
+	    when(twoStudents.get(2)).thenReturn(student);
+
+	    assertEquals(student, twoStudents.get(2));
+	}
+	
+	@Test
+	public void testSpyNoException() {
+		ArrayList<Student> twoStudents = Mockito.spy(students);
+	    twoStudents.add(new Student());
+	    
+	    when(twoStudents.get(2)).thenReturn(student);
+	    
+	    assertEquals(student, twoStudents.get(2));
+	}
+	
+	@Test
+	public void testSpyForce() {
+		ArrayList<Student> twoStudents = Mockito.spy(students);
+	    twoStudents.add(new Student());
+	    
+	    doReturn(student).when(twoStudents).get(2);
+	    
+	    assertEquals(student, twoStudents.get(2));
 	}
 	
 }
+

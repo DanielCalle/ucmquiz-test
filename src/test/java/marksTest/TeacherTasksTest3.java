@@ -7,34 +7,26 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.Mockito;
 
 import Marks.Student;
 import Marks.StudentDAO;
 import Marks.TeacherTasks;
 
-@RunWith(MockitoJUnitRunner.class)
-public class TeacherTasksTest {
+public class TeacherTasksTest3 {
 
-	@Mock
 	private Student student;
-	
 	private ArrayList<Student> students;
-
-	@InjectMocks
 	private TeacherTasks teacherTasks;
-
-	@Mock
 	private StudentDAO studentDAO;
 	
 	@Before
 	public void preparations() {
+		studentDAO = Mockito.mock(StudentDAO.class);
 		teacherTasks = new TeacherTasks();
 		teacherTasks.setStudentDAO(studentDAO);
 		student = new Student();
@@ -59,21 +51,20 @@ public class TeacherTasksTest {
 		assertEquals("nekomamushi", names.get(0));
 	}
 	
-	@Test // matchers
-	public void testShowMarkGivenStudent() {
-		student = student
-			.setName("nekomamushi")
-			.setSurname("cat viper")
-			.setGender(true)
-			.addMark("Dibujo Tecnico", 0)
-			.addMark("Lengua", 5)
-			.addMark("Matematicas", 8)
-			.addMark("Tecnologia", 7)
-			.addMark("Educacion Fisica", 10)
-			.build();
+	@Test // Mock in mock
+	public void testShowMarkGivenStudentAndFalseMarks() {
+		student = Mockito.mock(Student.class);
+
+		HashMap<String, Integer> marks = new HashMap<String, Integer>();
+		marks.put("Dibujo Tecnico", 0);
+		marks.put("Lengua", 5);
+
 		when(studentDAO.read(anyInt())).thenReturn(student);
+		when(student.getMarks()).thenReturn(marks);
 		teacherTasks.showMark(2);
 		verify(studentDAO, times(1)).read(anyInt());
+		verify(student, times(1)).getMarks();
 	}
 	
 }
+

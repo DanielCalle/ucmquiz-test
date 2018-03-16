@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+
 public class TeacherTasks {
 	
 	private StudentDAO studentDAO;
@@ -32,6 +33,12 @@ public class TeacherTasks {
 			}
 			return sum / marks.size();
 		}
+	}
+
+	public void showMark(int id) {
+		Student student = studentDAO.read(id);
+		System.out.println(student.toString());
+		System.out.println("Ha " + (getStudentAverage(student) >= 5 ? "aprobado" : "suspendido"));
 	}
 
 	public void setStudentDAO(StudentDAO studentDAO) {

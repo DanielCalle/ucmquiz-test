@@ -109,11 +109,13 @@ public class Student {
 		return this;
 	}
 
-	public void addMark(String subject, Integer mark) {
+	public Student addMark(String subject, Integer mark) {
 		this.marks.put(subject, mark);
+		return this;
 	};
 	
 	public Student build() {
+		id += 1;
 		return new Student(id, name, surname, birthDay, gender, nationality, grade, marks);
 	}
 	
