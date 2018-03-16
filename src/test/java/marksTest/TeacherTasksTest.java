@@ -1,10 +1,8 @@
 package marksTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
-
 import java.util.ArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +11,6 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import Marks.Student;
-import Marks.StudentBuilder;
 import Marks.StudentDAO;
 import Marks.TeacherTasks;
 
@@ -45,6 +42,7 @@ public class TeacherTasksTest {
 		when(studentDAO.readAll()).thenReturn(null);
 		teacherTasks.getOrderedNames();
 	}
+	
 	
 	@Test
 	public void testSortList() {

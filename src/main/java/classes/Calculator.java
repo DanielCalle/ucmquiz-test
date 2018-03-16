@@ -1,6 +1,6 @@
 package classes;
 
-public class Calculator {
+public class Calculator implements Areas {
 
 	private int operand1, operand2;
 	
@@ -58,6 +58,10 @@ public class Calculator {
 		
 		return operand1 * operand2;
 		
+	}
+	
+	public double circleArea(double r) {
+		return Math.PI * Math.pow(r, 2);
 	}
 
 }
