@@ -27,9 +27,13 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     testImplementation 'pl.pragmatists:JUnitParams:1.0.4'
+    testCompile "org.mockito:mockito-core:1.+"
     
     
     // Set this dependency if you want to use Hamcrest matching
     testImplementation 'org.hamcrest:hamcrest-library:1.3'
  
 }
+
+
+
