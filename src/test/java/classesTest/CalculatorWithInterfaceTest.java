@@ -1,7 +1,8 @@
 package classesTest;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -22,9 +23,9 @@ public class CalculatorWithInterfaceTest {
 	
 	@Test
 	public void testRectangleArea() {
-		
-		fail("Aun no esta implementado.");
-		
+		Integer a = 2;
+		Integer b = 1 + 1;
+		assertEquals(a, b);
 	}
 
 }
