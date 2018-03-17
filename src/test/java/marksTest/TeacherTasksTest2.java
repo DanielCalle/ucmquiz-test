@@ -13,9 +13,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import Marks.Student;
-import Marks.StudentDAO;
-import Marks.TeacherTasks;
+import marks.Student;
+import marks.StudentDAO;
+import marks.TeacherTasks;
 
 public class TeacherTasksTest2 {
 

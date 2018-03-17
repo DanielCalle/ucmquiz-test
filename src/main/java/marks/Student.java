@@ -1,4 +1,4 @@
-package Marks;
+package marks;
 
 import java.util.Date;
 import java.util.GregorianCalendar;

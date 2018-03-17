@@ -1,4 +1,4 @@
-package Marks;
+package marks;
 
 import java.util.ArrayList;
 import java.util.Collections;

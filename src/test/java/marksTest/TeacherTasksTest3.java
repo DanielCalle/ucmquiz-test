@@ -13,9 +13,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import Marks.Student;
-import Marks.StudentDAO;
-import Marks.TeacherTasks;
+import marks.Student;
+import marks.StudentDAO;
+import marks.TeacherTasks;
 
 public class TeacherTasksTest3 {
 
