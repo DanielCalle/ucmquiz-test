@@ -76,4 +76,10 @@ public class TeacherTasksTest {
 		verify(studentDAO, times(1)).read(anyInt());
 	}
 	
+	@SuppressWarnings("unchecked")
+	@Test(expected = NullPointerException.class)
+	public void testThrowException() {
+		when(studentDAO.read(anyInt())).thenThrow(NullPointerException.class);
+		teacherTasks.showMark(2);
+	}
 }
