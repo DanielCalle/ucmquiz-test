@@ -9,6 +9,9 @@ notifications:
   stage: notifications
   email:
     - dacalle@ucm.es
+    - zhong.9745@gmail.com
+    - carlosgcereceda@hotmail.es
+    - manugm_8@hotmail.com
   on_success: always
   on_failure: always
 
