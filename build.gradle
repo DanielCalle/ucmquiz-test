@@ -35,5 +35,11 @@ dependencies {
  
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'classes.Main'
+    }
+}
+
 
 

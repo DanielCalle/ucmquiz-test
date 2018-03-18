@@ -17,12 +17,15 @@ notifications:
 
 jobs:
   include:
-    - stage: build
-      script: ./gradlew build -x test
+    - stage: compile
+      script: ./gradlew classes
     - stage: test
       script: ./gradlew test
+    - stage: deploy
+      script: ./gradlew jar
 
 stages:
-  - build
+  - compile
   - test
+  - jar
 
