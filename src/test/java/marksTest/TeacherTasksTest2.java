@@ -37,7 +37,6 @@ public class TeacherTasksTest2 {
 		students = new ArrayList<Student>();
 		students.add(student.setName("zunisha").build());
 		students.add(student.setName("nekomamushi").build());
-		
 	}
 	
 	@Test(expected = NullPointerException.class)
