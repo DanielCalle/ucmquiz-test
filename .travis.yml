@@ -5,10 +5,16 @@ install: true
 jdk:
 - oraclejdk8
 
+notifications:
+  stage: notifications
+  email:
+    - dacalle@ucm.es
+  on_success: always
+  on_failure: always
+
 stages:
   - build
   - test
-  - deploy
 
 before_script:
 #  - echo `pwd` # debug
@@ -32,7 +38,3 @@ test:
 
 after_script:
 - echo "End CI"
-
-notifications:
-  email:
-    - dacalle@ucm.es
