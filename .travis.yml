@@ -21,3 +21,8 @@ jobs:
       script: ./gradlew build -x test
     - stage: test
       script: ./gradlew test
+
+stages:
+  - build
+  - test
+
