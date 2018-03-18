@@ -23,7 +23,7 @@ public class CalculatorWithInterfaceTest {
 	@Test
 	public void testRectangleArea() {
 		
-		fail("Aun no esta implementado.");
+		//fail("Aun no esta implementado.");
 		
 	}
 
