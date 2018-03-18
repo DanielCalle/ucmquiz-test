@@ -1,6 +1,7 @@
 package classesTest;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -121,6 +122,31 @@ public class CalculatorTest {
 		assertThat( c.seconGradeEcuationSecondSolution(1, -5, 6) > 0 , equalTo(true) );
 	
 		assertThat("Comprobacion del resultado", c.seconGradeEcuationSecondSolution(1, -5, 6) , equalTo(2) );
+		
+	}
+	
+	@Test
+	public void testInternalIntegrationTest() {
+		
+		Calculator c = new Calculator(3,5);
+		
+		int sol1 = c.add();
+		
+		assertEquals(sol1,8);
+		
+		c.setOperandsInMemory(6, 3);
+		
+		int sol2 = c.div();
+		
+		assertEquals(sol2,2);
+		
+		c.setOperandsInMemory(sol1, sol2);
+		
+		int sol3 = c.mul();
+		
+		assertEquals(sol3,16);
+		
+		assertEquals(c.seconGradeEcuationFirstSolution(sol1, sol2, sol3),0);
 		
 	}
 	
